@@ -48,5 +48,3 @@
 **Autori proiect**
 
 Căldărușe Bianca Alexandra, grupa 244, FMI UniBuc.
-
-"# PAO---Proiect" 
