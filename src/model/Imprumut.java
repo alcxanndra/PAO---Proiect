@@ -1,5 +1,7 @@
 package model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Imprumut {
@@ -61,12 +63,20 @@ public class Imprumut {
 
     @Override
     public String toString() {
+
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String dataImprumutStr = dateFormat.format(dataImprumut);
+        String dataDeadlineReturnareStr = dateFormat.format(dataDeadlineReturnare);
+        String dataActualaReturnareStr = dateFormat.format(dataActualaReturnare);
+
+
+
         return "Imprumut{" +
                 "cititor=" + cititor +
                 ", carte=" + carte +
-                ", dataImprumut=" + dataImprumut +
-                ", dataDeadlineReturnare=" + dataDeadlineReturnare +
-                ", dataActualaReturnare=" + dataActualaReturnare +
+                ", dataImprumut=" + dataImprumutStr +
+                ", dataDeadlineReturnare=" + dataDeadlineReturnareStr +
+                ", dataActualaReturnare=" + dataActualaReturnareStr +
                 '}';
     }
 }

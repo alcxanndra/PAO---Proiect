@@ -1,6 +1,9 @@
 package model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Carte {
 
@@ -88,6 +91,21 @@ public class Carte {
         }
         return s;
     }
+
+    public boolean isEsteRezervata(Date dataDeVerificat, Cititor cititor) {
+
+        for (Rezervare r : rezervariCarte) {
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String dataRezervareStr = dateFormat.format(r.getDataRezervare());
+            String dataDeVerificatStr = dateFormat.format(dataDeVerificat);
+            if (dataRezervareStr.equals(dataDeVerificatStr) && r.getCititor().equals(cititor) == false){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
 
     @Override

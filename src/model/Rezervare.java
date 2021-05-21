@@ -1,6 +1,9 @@
 package model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Rezervare {
 
@@ -40,10 +43,14 @@ public class Rezervare {
 
     @Override
     public String toString() {
+
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String strDate = dateFormat.format(dataRezervare);
+
         return "Rezervare{" +
                 "cititor=" + cititor +
                 ", carte=" + carte +
-                ", dataRezervare=" + dataRezervare +
+                ", dataRezervare=" + strDate +
                 '}';
     }
 }

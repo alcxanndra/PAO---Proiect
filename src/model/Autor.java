@@ -26,11 +26,6 @@ public class Autor extends Persoana implements Comparable{
     }
 
     public List<String> cartiToString(ArrayList<Carte> cartiScrise) {
-//        String str = "";
-//        for (int i = 0; i < cartiScrise.size(); i++){
-//            str += cartiScrise.get(i) + "\t";
-//        }
-//        return str;
         List<String> strings = new ArrayList<>(cartiScrise.size());
         for (Carte carte : cartiScrise) {
             strings.add(Objects.toString(carte, null));
@@ -41,7 +36,7 @@ public class Autor extends Persoana implements Comparable{
     @Override
     public String toString() {
         return "Autor{" +
-                ", id=" + id +
+                "id=" + id +
                 ", nume='" + nume + '\'' +
                 ", prenume='" + prenume + '\'' +
                 '}';
