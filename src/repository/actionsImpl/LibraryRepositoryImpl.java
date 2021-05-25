@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import static utils.Queries.*;
@@ -71,8 +72,8 @@ public class LibraryRepositoryImpl implements LibraryRepository {
     }
 
     @Override
-    public HashMap<Sectiune, Integer> returneazaSectiuniDupaNrCarti() {
-        HashMap<Sectiune, Integer> sectionList = new HashMap<>();
+    public LinkedHashMap<Sectiune, Integer> returneazaSectiuniDupaNrCarti() {
+        LinkedHashMap<Sectiune, Integer> sectionList = new LinkedHashMap<Sectiune, Integer>();
         try {
             PreparedStatement preparedStatement = dbConnection.getDBConnection().prepareStatement(RETRIEVE_ALL_SECTIONS_BY_NR_OF_BOOKS);
             ResultSet resultSet = preparedStatement.executeQuery();

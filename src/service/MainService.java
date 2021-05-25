@@ -33,7 +33,7 @@ public class MainService {
         return libraryRepository.returneazaSectiuniAlfabetic();
     }
 
-    public HashMap<Sectiune, Integer> returneazaSectiuniDupaNrCarti(){
+    public LinkedHashMap<Sectiune, Integer> returneazaSectiuniDupaNrCarti(){
         return libraryRepository.returneazaSectiuniDupaNrCarti();
     }
 

@@ -238,14 +238,14 @@ public class Main {
 
                 case 14:
                     System.out.println("Secțiunile existente în sistem în ordine descrescătoare a numărului de cărți conținute sunt:");
-                    HashMap<Sectiune, Integer> sections = mainService.returneazaSectiuniDupaNrCarti();
-                    Iterator it = sections.entrySet().iterator();
+                    LinkedHashMap<Sectiune, Integer> sectiuni14 = mainService.returneazaSectiuniDupaNrCarti();
+                    Iterator it = sectiuni14.entrySet().iterator();
                     while (it.hasNext()) {
                         Map.Entry pair = (Map.Entry)it.next();
-                        System.out.println("Detalii secțiune:");
-                        System.out.println(pair.getKey());
-                        System.out.println("Număr cărți secțiune:" + pair.getValue());
-                        it.remove();
+                        System.out.println("Secțiune{" +
+                                "Id: " + ((Sectiune)pair.getKey()).getId() + ", " +
+                                "Titlu: " + ((Sectiune) pair.getKey()).getNume() + ", " +
+                                "Număr cărți secțiune: " + pair.getValue() + "}");
                     }
                     break;
 

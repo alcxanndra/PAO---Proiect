@@ -3,6 +3,7 @@ package repository.actions;
 import model.*;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public interface LibraryRepository {
@@ -13,7 +14,7 @@ public interface LibraryRepository {
 
     List<Sectiune> returneazaSectiuniAlfabetic();
 
-    HashMap<Sectiune, Integer> returneazaSectiuniDupaNrCarti();
+    LinkedHashMap<Sectiune, Integer> returneazaSectiuniDupaNrCarti();
 
     List<AngajatBiblioteca> returneazaAngajatiAlfabetic();
 
