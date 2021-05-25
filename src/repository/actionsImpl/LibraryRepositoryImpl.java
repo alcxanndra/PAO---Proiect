@@ -158,6 +158,7 @@ public class LibraryRepositoryImpl implements LibraryRepository {
         List<Rezervare> rezervariCititor = new ArrayList<>();
         try{
             PreparedStatement preparedStatement = dbConnection.getDBConnection().prepareStatement(GET_READER_HOLD_REQUESTS);
+            preparedStatement.setString(1,String.valueOf(idCititor));
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Rezervare r = new Rezervare(resultSet.getInt(1), resultSet.getInt(2),
