@@ -6,35 +6,53 @@ import java.util.Date;
 
 public class Imprumut {
 
-    private Cititor cititor;
-    private Carte carte;
+    private int idImprumut;
+    private int idCititor;
+    private int idCarte;
 
     private Date dataImprumut;
     private Date dataDeadlineReturnare;
     private Date dataActualaReturnare;
 
-    public Imprumut(Cititor cititor, Carte carte, Date dataImprumut, Date dataDeadlineReturnare, Date dataActualaReturnare) {
-        this.cititor = cititor;
-        this.carte = carte;
+    public Imprumut(int idCititor, int idCarte, Date dataImprumut, Date dataDeadlineReturnare, Date dataActualaReturnare) {
+        this.idCititor = idCititor;
+        this.idCarte = idCarte;
         this.dataImprumut = dataImprumut;
         this.dataDeadlineReturnare = dataDeadlineReturnare;
         this.dataActualaReturnare = dataActualaReturnare;
     }
 
-    public Cititor getCititor() {
-        return cititor;
+    public Imprumut(int idImprumut, int idCititor, int idCarte, Date dataImprumut, Date dataDeadlineReturnare, Date dataActualaReturnare) {
+        this.idImprumut = idImprumut;
+        this.idCititor = idCititor;
+        this.idCarte = idCarte;
+        this.dataImprumut = dataImprumut;
+        this.dataDeadlineReturnare = dataDeadlineReturnare;
+        this.dataActualaReturnare = dataActualaReturnare;
     }
 
-    public void setCititor(Cititor cititor) {
-        this.cititor = cititor;
+    public int getIdImprumut() {
+        return idImprumut;
     }
 
-    public Carte getCarte() {
-        return carte;
+    public void setIdImprumut(int idImprumut) {
+        this.idImprumut = idImprumut;
     }
 
-    public void setCarte(Carte carte) {
-        this.carte = carte;
+    public int getIdCititor() {
+        return idCititor;
+    }
+
+    public void setIdCititor(int idCititor) {
+        this.idCititor = idCititor;
+    }
+
+    public int getIdCarte() {
+        return idCarte;
+    }
+
+    public void setIdCarte(int idCarte) {
+        this.idCarte = idCarte;
     }
 
     public Date getDataImprumut() {
@@ -59,24 +77,5 @@ public class Imprumut {
 
     public void setDataActualaReturnare(Date dataActualaReturnare) {
         this.dataActualaReturnare = dataActualaReturnare;
-    }
-
-    @Override
-    public String toString() {
-
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String dataImprumutStr = dateFormat.format(dataImprumut);
-        String dataDeadlineReturnareStr = dateFormat.format(dataDeadlineReturnare);
-        String dataActualaReturnareStr = dateFormat.format(dataActualaReturnare);
-
-
-
-        return "Imprumut{" +
-                "cititor=" + cititor +
-                ", carte=" + carte +
-                ", dataImprumut=" + dataImprumutStr +
-                ", dataDeadlineReturnare=" + dataDeadlineReturnareStr +
-                ", dataActualaReturnare=" + dataActualaReturnareStr +
-                '}';
     }
 }

@@ -7,30 +7,46 @@ import java.util.Locale;
 
 public class Rezervare {
 
-    private Cititor cititor;
-    private Carte carte;
+    private int idRezervare;
+    private int idCititor;
+    private int idCarte;
     private Date dataRezervare;
 
-    public Rezervare(Cititor cititor, Carte carte, Date dataRezervare) {
-        this.cititor = cititor;
-        this.carte = carte;
+    public Rezervare(int idRezervare, int idCititor, int idCarte, Date dataRezervare) {
+        this.idRezervare = idRezervare;
+        this.idCititor = idCititor;
+        this.idCarte = idCarte;
         this.dataRezervare = dataRezervare;
     }
 
-    public Cititor getCititor() {
-        return cititor;
+    public Rezervare(int idCititor, int idCarte, Date dataRezervare) {
+        this.idCititor = idCititor;
+        this.idCarte = idCarte;
+        this.dataRezervare = dataRezervare;
     }
 
-    public void setCititor(Cititor cititor) {
-        this.cititor = cititor;
+    public int getIdRezervare() {
+        return idRezervare;
     }
 
-    public Carte getCarte() {
-        return carte;
+    public void setIdRezervare(int idRezervare) {
+        this.idRezervare = idRezervare;
     }
 
-    public void setCarte(Carte carte) {
-        this.carte = carte;
+    public int getIdCititor() {
+        return idCititor;
+    }
+
+    public void setIdCititor(int idCititor) {
+        this.idCititor = idCititor;
+    }
+
+    public int getIdCarte() {
+        return idCarte;
+    }
+
+    public void setIdCarte(int idCarte) {
+        this.idCarte = idCarte;
     }
 
     public Date getDataRezervare() {
@@ -43,14 +59,11 @@ public class Rezervare {
 
     @Override
     public String toString() {
-
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String strDate = dateFormat.format(dataRezervare);
-
         return "Rezervare{" +
-                "cititor=" + cititor +
-                ", carte=" + carte +
-                ", dataRezervare=" + strDate +
+                "idRezervare=" + idRezervare +
+                ", idCititor=" + idCititor +
+                ", idCarte=" + idCarte +
+                ", dataRezervare=" + dataRezervare +
                 '}';
     }
 }

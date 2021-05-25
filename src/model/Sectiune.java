@@ -6,19 +6,16 @@ public class Sectiune implements Comparable{
 
     private int id;
     private String nume;
-    private ArrayList<Carte> cartiSectiune;
-
-    static int nrIdCurent = 0;
 
     public Sectiune(){}
 
     public Sectiune(String nume) {
-
-        nrIdCurent++;
-
-        this.id = nrIdCurent;
         this.nume = nume;
-        this.cartiSectiune = new ArrayList<Carte>();
+    }
+
+    public Sectiune(int id, String nume) {
+        this.id = id;
+        this.nume = nume;
     }
 
     public int getId() {
@@ -37,36 +34,11 @@ public class Sectiune implements Comparable{
         this.nume = nume;
     }
 
-    public static int getNrIdCurent() {
-        return nrIdCurent;
-    }
-
-    public static void setNrIdCurent(int nrIdCurent) {
-        Sectiune.nrIdCurent = nrIdCurent;
-    }
-
-    public ArrayList<Carte> getCartiSectiune() {
-        return cartiSectiune;
-    }
-
-    public void setCartiSectiune(ArrayList<Carte> cartiSectiune) {
-        this.cartiSectiune = cartiSectiune;
-    }
-
-    public String cartiToString(ArrayList<Carte> cartiScrise) {
-        String listString = "";
-        for (Carte c : cartiScrise) {
-            listString += c.toString() + "\t";
-        }
-        return listString;
-    }
-
     @Override
     public String toString() {
         return "Sectiune{" +
                 "id=" + id +
                 ", nume='" + nume + '\'' +
-                ", cartiSectiune=" + cartiToString(cartiSectiune) +
                 '}';
     }
 

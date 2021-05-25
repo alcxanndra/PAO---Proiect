@@ -7,23 +7,25 @@ public class Persoana {
     protected String prenume;
     protected String nume;
 
-
-    static int nrIdCurrent = 0;
-
     public Persoana(){}
 
-    public Persoana(String prenume, String nume){
-
-        nrIdCurrent++;
-
-        this.id = nrIdCurrent;
+    public Persoana(int id, String prenume, String nume){
+        this.id = id;
         this.prenume = prenume;
         this.nume = nume;
+    }
 
+    public Persoana(String prenume, String nume){
+        this.prenume = prenume;
+        this.nume = nume;
     }
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPrenume() {
@@ -40,14 +42,6 @@ public class Persoana {
 
     public void setNume(String nume) {
         this.nume = nume;
-    }
-
-    public static int getNrIdCurrent() {
-        return nrIdCurrent;
-    }
-
-    public static void setNrIdCurrent(int nrIdCurrent) {
-        Persoana.nrIdCurrent = nrIdCurrent;
     }
 
     @Override

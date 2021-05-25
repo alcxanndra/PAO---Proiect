@@ -9,6 +9,11 @@ public class AngajatBiblioteca extends Persoana {
         this.salariu = salariu;
     }
 
+    public AngajatBiblioteca(int id, String prenume, String nume, double salariu) {
+        super(id, prenume, nume);
+        this.salariu = salariu;
+    }
+
     public double getSalariu() {
         return salariu;
     }
@@ -19,7 +24,7 @@ public class AngajatBiblioteca extends Persoana {
 
     @Override
     public String toString() {
-        return "Bibliotecar{" +
+        return "AngajatBiblioteca{" +
                 "salariu=" + salariu +
                 ", id=" + id +
                 ", prenume='" + prenume + '\'' +

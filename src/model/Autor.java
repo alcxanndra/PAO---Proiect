@@ -6,32 +6,18 @@ import java.util.Objects;
 
 public class Autor extends Persoana implements Comparable{
 
-    private ArrayList<Carte> cartiScrise;
-
     public Autor(){
         super();
     }
 
     public Autor(String prenume, String nume) {
         super(prenume, nume);
-        this.cartiScrise = new ArrayList<>();
     }
 
-    public ArrayList<Carte> getCartiScrise() {
-        return cartiScrise;
+    public Autor(int id, String prenume, String nume) {
+        super(id, prenume, nume);
     }
 
-    public void setCartiScrise(ArrayList<Carte> cartiScrise) {
-        this.cartiScrise = cartiScrise;
-    }
-
-    public List<String> cartiToString(ArrayList<Carte> cartiScrise) {
-        List<String> strings = new ArrayList<>(cartiScrise.size());
-        for (Carte carte : cartiScrise) {
-            strings.add(Objects.toString(carte, null));
-        }
-        return strings;
-    }
 
     @Override
     public String toString() {
