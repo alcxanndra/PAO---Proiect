@@ -374,6 +374,7 @@ public class Main {
                             System.out.println(imprumuturiCititor);
                         }
                     }
+                    break;
 
                 case 27:
                     System.out.println("Introduceți ID-ul cititorului:");

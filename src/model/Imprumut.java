@@ -31,6 +31,18 @@ public class Imprumut {
         this.dataActualaReturnare = dataActualaReturnare;
     }
 
+    @Override
+    public String toString() {
+        return "Imprumut{" +
+                "idImprumut=" + idImprumut +
+                ", idCititor=" + idCititor +
+                ", idCarte=" + idCarte +
+                ", dataImprumut=" + dataImprumut +
+                ", dataDeadlineReturnare=" + dataDeadlineReturnare +
+                ", dataActualaReturnare=" + dataActualaReturnare +
+                '}';
+    }
+
     public int getIdImprumut() {
         return idImprumut;
     }
