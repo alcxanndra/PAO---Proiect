@@ -1,0 +1,4 @@
+id_cititor,id_carte,data_imprumut,deadline_returnare,data_actuala_returnare
+13,1,21/05/2021,21/05/2021,29/05/2021
+14,2,22/05/2021,20/06/2021,
+15,3,22/05/2021,29/06/2021,

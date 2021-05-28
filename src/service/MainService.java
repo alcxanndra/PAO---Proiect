@@ -2,8 +2,9 @@ package service;
 
 import model.*;
 import static utils.Queries.*;
-import repository.actions.LibraryRepository;
-import repository.actionsImpl.LibraryRepositoryImpl;
+
+import repository.actions.*;
+import repository.actionsImpl.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,182 +18,188 @@ import java.util.*;
 
 public class MainService {
 
-    private LibraryRepository libraryRepository  = new LibraryRepositoryImpl();
+    private AuthorRepository authorRepository  = new AuthorRepositoryImpl();
+    private BookRepository bookRepository  = new BookRepositoryImpl();
+    private SectionRepository sectionRepository  = new SectionRepositoryImpl();
+    private ReaderRepository readerRepository  = new ReaderRepositoryImpl();
+    private LibraryEmployeeRepository libEmployeeRepository = new LibraryEmployeeRepositoryImpl();
+    private HoldRequestRepository holdRequestRepository = new HoldRequestRepositoryImpl();
+    private LoanRepository loanRepository = new LoanRepositoryImpl();
+    private CommonRepository commonRepository = new CommonRepositoryImpl();
 
     public MainService() { }
 
     public List<Carte> returneazaCartiAlfabetic(){
-        return libraryRepository.returneazaCartiAlfabetic();
+        return bookRepository.returneazaCartiAlfabetic();
     }
 
     public List<Autor> returneazaAutoriAlfabetic(){
-        return libraryRepository.returneazaAutoriAlfabetic();
+        return authorRepository.returneazaAutoriAlfabetic();
     }
 
     public List<Sectiune> returneazaSectiuniAlfabetic(){
-        return libraryRepository.returneazaSectiuniAlfabetic();
+        return sectionRepository.returneazaSectiuniAlfabetic();
     }
 
     public LinkedHashMap<Sectiune, Integer> returneazaSectiuniDupaNrCarti(){
-        return libraryRepository.returneazaSectiuniDupaNrCarti();
+        return sectionRepository.returneazaSectiuniDupaNrCarti();
     }
 
     public List<AngajatBiblioteca> returneazaAngajatiAlfabetic(){
-        return libraryRepository.returneazaAngajatiAlfabetic();
+        return libEmployeeRepository.returneazaAngajatiAlfabetic();
     }
 
     public List<AngajatBiblioteca> returneazaAngajatiDupaSalariu(){
-        return libraryRepository.returneazaAngajatiDupaSalariu();
+        return libEmployeeRepository.returneazaAngajatiDupaSalariu();
     }
 
     public List<Cititor> returneazaCititoriAlfabetic(){
-        return libraryRepository.returneazaCititoriAlfabetic();
+        return readerRepository.returneazaCititoriAlfabetic();
     }
 
     public List<Imprumut> returneazaImprumuturiCititor(int idCititor){
-        return libraryRepository.returneazaImprumuturiCititor(idCititor);
+        return readerRepository.returneazaImprumuturiCititor(idCititor);
     }
 
     public List<Rezervare> returneazaRezervariCititor(int idCititor){
-        return libraryRepository.returneazaRezervariCititor(idCititor);
+        return readerRepository.returneazaRezervariCititor(idCititor);
     }
 
     public int adaugaCarte(Carte carte){
-        return libraryRepository.adaugaCarte(carte);
+        return bookRepository.adaugaCarte(carte);
     }
 
     public int adaugaAutor(Autor autor){
-        return libraryRepository.adaugaAutor(autor);
+        return authorRepository.adaugaAutor(autor);
     }
 
     public int adaugaSectiune(Sectiune sectiune){
-        return libraryRepository.adaugaSectiune(sectiune);
+        return sectionRepository.adaugaSectiune(sectiune);
     }
 
     public int adaugaAngajatBiblioteca(AngajatBiblioteca angajat){
-        return libraryRepository.adaugaAngajatBiblioteca(angajat);
+        return libEmployeeRepository.adaugaAngajatBiblioteca(angajat);
     }
 
     public int adaugaCititor(Cititor cititor){
-        return libraryRepository.adaugaCititor(cititor);
+        return readerRepository.adaugaCititor(cititor);
     }
 
     public int adaugaImprumut(Imprumut imprumut){
-        return libraryRepository.adaugaImprumut(imprumut);
+        return loanRepository.adaugaImprumut(imprumut);
     }
 
     public int adaugaRezervare(Rezervare rezervare){
-        return libraryRepository.adaugaRezervare(rezervare);
+        return holdRequestRepository.adaugaRezervare(rezervare);
     }
 
     public void stergeCarte(int idCarte){
-        libraryRepository.stergeCarte(idCarte);
+        bookRepository.stergeCarte(idCarte);
     }
 
     public void stergeAutor(int idAutor){
-        libraryRepository.stergeAutor(idAutor);
+        authorRepository.stergeAutor(idAutor);
     }
 
     public void stergeSectiune(int idSectiune){
-        libraryRepository.stergeSectiune(idSectiune);
+        sectionRepository.stergeSectiune(idSectiune);
     }
 
     public void stergeAngajatBiblioteca(int idAngajat){
-        libraryRepository.stergeAngajatBiblioteca(idAngajat);
+        libEmployeeRepository.stergeAngajatBiblioteca(idAngajat);
     }
 
     public void stergeCititor(int idCititor){
-        libraryRepository.stergeCititor(idCititor);
+        readerRepository.stergeCititor(idCititor);
     }
 
     public void stergeRezervare(int idRezervare){
-        libraryRepository.stergeRezervare(idRezervare);
+        holdRequestRepository.stergeRezervare(idRezervare);
     }
 
     public int cautaCarte(int idCarte){
-        return  libraryRepository.cautaEntitate(idCarte, GET_BOOK_BY_ID);
+        return  commonRepository.cautaEntitate(idCarte, GET_BOOK_BY_ID);
     }
 
     public int cautaAutor(int idAutor){
-        return  libraryRepository.cautaEntitate(idAutor, GET_AUTHOR_BY_ID);
+        return  commonRepository.cautaEntitate(idAutor, GET_AUTHOR_BY_ID);
     }
 
     public int cautaSectiune(int idSectiune){
-        return  libraryRepository.cautaEntitate(idSectiune, GET_SECTION_BY_ID);
+        return  commonRepository.cautaEntitate(idSectiune, GET_SECTION_BY_ID);
     }
 
     public int cautaAngajatBiblioteca(int idAngajat){
-        return libraryRepository.cautaEntitate(idAngajat, GET_EMPLOYEE_BY_ID);
+        return commonRepository.cautaEntitate(idAngajat, GET_EMPLOYEE_BY_ID);
     }
 
     public int cautaCititor(int idCititor){
-        return libraryRepository.cautaEntitate(idCititor, GET_READER_BY_ID);
+        return commonRepository.cautaEntitate(idCititor, GET_READER_BY_ID);
     }
 
     public int cautaImprumut(int idCititor, int idCarte){
-        return libraryRepository.cautaImprumut(idCititor, idCarte);
+        return loanRepository.cautaImprumut(idCititor, idCarte);
     }
 
     public int cautaRezervare(int idRezervare){
-        return libraryRepository.cautaEntitate(idRezervare, GET_HOLD_REQUEST_BY_ID);
+        return commonRepository.cautaEntitate(idRezervare, GET_HOLD_REQUEST_BY_ID);
     }
 
     public List<Carte> cautaCartiAutor(int idAutor){
-        return  libraryRepository.cautaCartiAutor(idAutor);
+        return  authorRepository.cautaCartiAutor(idAutor);
     }
 
     public void modificaTitluCarte(int idCarte, String titluNou){
-        libraryRepository.modificaTitluCarte(idCarte, titluNou);
+        bookRepository.modificaTitluCarte(idCarte, titluNou);
     }
 
     public void modificaSectiuneCarte(int idCarte, int idNouSectiune){
-        libraryRepository.modificaSectiuneCarte(idCarte, idNouSectiune);
+        bookRepository.modificaSectiuneCarte(idCarte, idNouSectiune);
     }
 
     public void modificaAutorCarte(int idCarte, int idNouAutor){
-        libraryRepository.modificaAutorCarte(idCarte, idNouAutor);
+        bookRepository.modificaAutorCarte(idCarte, idNouAutor);
     }
 
     public void modificaNumeSectiune(int idSectiune, String numeNou){
-        libraryRepository.modificaNumeSectiune(idSectiune, numeNou);
+        sectionRepository.modificaNumeSectiune(idSectiune, numeNou);
     }
 
     public void modificaSalariuAngajat(int idAngajat, double salariuNou){
-        libraryRepository.modificaSalariuAngajat(idAngajat, salariuNou);
+        libEmployeeRepository.modificaSalariuAngajat(idAngajat, salariuNou);
     }
 
     public void modificaDataActualaReturnareImprumut(int idImprumut, String dataReturnare){
-        libraryRepository.modificaDataActualaReturnareImprumut(idImprumut, dataReturnare);
+        loanRepository.modificaDataActualaReturnareImprumut(idImprumut, dataReturnare);
     }
 
     public void modificaStatusCarte(int idCarte, int statusNou){
-        libraryRepository.modificaStatusCarte(idCarte, statusNou);
+        bookRepository.modificaStatusCarte(idCarte, statusNou);
     }
 
-
     public List<String> afiseazaInformatiiCarte(int idCarte){
-        return libraryRepository.afiseazaInformatiiCarte(idCarte);
+        return bookRepository.afiseazaInformatiiCarte(idCarte);
     }
 
     public List<Rezervare> afiseazaRezervariCarte(int idCarte){
-        return libraryRepository.afiseazaRezervariCarte(idCarte);
+        return bookRepository.afiseazaRezervariCarte(idCarte);
     }
 
     public int gasesteIdAutor(String prenumeAutor, String numeAutor){
-        return libraryRepository.gasesteIdAutor(prenumeAutor, numeAutor);
+        return authorRepository.gasesteIdAutor(prenumeAutor, numeAutor);
     }
 
     public int gasesteIdSectiune(String titluSectiune){
-        return libraryRepository.gasesteIdSectiune(titluSectiune);
+        return sectionRepository.gasesteIdSectiune(titluSectiune);
     }
 
     public boolean esteCarteImprumutata(int idCarte){
-        return libraryRepository.esteCarteImprumutata(idCarte);
+        return bookRepository.esteCarteImprumutata(idCarte);
     }
 
     public boolean esteCarteRezervata(int idCarte, Date dataRezervare, int idCititorCareRezerva){
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         String dataRezervareStr = dateFormat.format(dataRezervare);
-        return libraryRepository.esteCarteRezervata(idCarte, dataRezervareStr, idCititorCareRezerva);
+        return bookRepository.esteCarteRezervata(idCarte, dataRezervareStr, idCititorCareRezerva);
     }
 }
