@@ -7,5 +7,4 @@ public interface HoldRequestRepository {
     int adaugaRezervare(Rezervare rezervare);
     void stergeRezervare(int idRezervare);
 
-
 }

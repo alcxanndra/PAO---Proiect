@@ -12,5 +12,4 @@ public interface LibraryEmployeeRepository {
     void stergeAngajatBiblioteca(int idAngajat);
     void modificaSalariuAngajat(int idAngajat, double salariuNou);
 
-
 }

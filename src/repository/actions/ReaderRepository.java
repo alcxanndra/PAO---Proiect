@@ -14,5 +14,4 @@ public interface ReaderRepository {
     int adaugaCititor(Cititor cititor);
     void stergeCititor(int idCititor);
 
-
 }
