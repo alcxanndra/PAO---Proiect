@@ -1,10 +1,10 @@
 **Denumire proiect**
 
-"BiblyOn" - Sistem de gestiune a unei biblioteci online.
+Lib+ (Sistem de gestiune a unei biblioteci online).
 
 **Descriere proiect**
 
-"BibliyOn" este un sistem de gestiune a unei biblioteci online, destinat utilizării de către bibliotecarul responsabil de conducerea bibliotecii.
+Lib+ este un sistem de gestiune a unei biblioteci online, destinat utilizării de către bibliotecarul responsabil de conducerea bibliotecii.
 
 **_Tipuri de obiecte definite:_**
 
