@@ -1,10 +1,10 @@
 **Denumire proiect**
 
-Lib+ (Sistem de gestiune a unei biblioteci online).
+<b>Lib+</b> (Sistem de gestiune a unei biblioteci online).
 
 **Descriere proiect**
 
-Lib+ este un sistem de gestiune a unei biblioteci online, destinat utilizării de către bibliotecarul responsabil de conducerea bibliotecii.
+<b>Lib+</b> este un sistem de gestiune a unei biblioteci online, destinat utilizării de către bibliotecarul responsabil de conducerea bibliotecii.
 
 **_Tipuri de obiecte definite:_**
 
