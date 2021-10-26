@@ -1,10 +1,10 @@
 **Denumire proiect**
 
-<b>Lib+</b> (Sistem de gestiune a unei biblioteci online).
+<b>LIB+</b> (Sistem de gestiune a unei biblioteci online).
 
 **Descriere proiect**
 
-<b>Lib+</b> este un sistem de gestiune a unei biblioteci online, destinat utilizării de către bibliotecarul responsabil de conducerea bibliotecii.
+<b>LIB+</b> este un sistem de gestiune a unei biblioteci online, destinat utilizării de către bibliotecarul responsabil de conducerea bibliotecii.
 
 **_Tipuri de obiecte definite:_**
 
@@ -29,21 +29,31 @@
 **_Acțiuni/interogări implementate în cadrul sistemului:_**
 1) Afișarea tuturor cărților din sistem (în ordinea adăugării în sistem).
 2) Adăugarea unei cărți noi în sistem.
-3) Afișarea informațiilor (titlu, secțiune, autor, status) despre o carte cu un ID introdus.
-4) Afișarea tuturor autorilor din sistem (în ordine alfabetică după numele de familie).
-5) Adăugarea unui autor nou în sistem.
-6) Afișarea tututor cărților din sistem scrise de către un autor având numele și prenumele introduse.
-7) Afișarea tuturor secțiunilor existente în sistem (ordonate alfabetic).
-8) Afișarea tuturor secțiunilor existente în sistem (ordonate descrescător după numărul de cărți conținute).
-9) Adăugarea unei secțiuni noi în sistem.
-10) Afișarea tuturor angajaților din bibliotecă.
-11) Adăugarea unui angajat nou al bibliotecii în sistem.
-12) Afișarea tuturor cititorilor existenți în sistemul bibliotecii.
-13) Adăugarea unui cititor nou în sistemul bibliotecii.
-14) Afișarea cărților împrumutate în prezent de către un cititor cu un ID introdus.
-15) Efectuarea unui nou împrumut al unei cărți disponibile din sistem către un cititor.
-16) Efectuarea returnării unei cărți împrumutate anterior de către un cititor în sistem.
-17) Efectuarea unei rezervări pentru o anumită carte de către un cititor din sistem.
+3) Ștergerea unei cărți existente în sistem.
+4) Afișarea informațiilor (titlu, secțiune, autor, status) despre o carte cu un ID introdus.
+5) Afișarea rezevărilor existente pentru o carte din sistem.
+6) Modificarea titlului/autorului/secțiunii unei cărți existente în sistem.
+7) Afișarea tuturor autorilor din sistem (în ordine alfabetică după numele de familie).
+8) Adăugarea unui autor nou în sistem.
+9) Ștergerea unui autor existent în sistem.
+10) Afișarea tututor cărților din sistem scrise de către un autor având numele și prenumele introduse.
+11) Afișarea tuturor secțiunilor existente în sistem (ordonate alfabetic).
+12) Afișarea tuturor secțiunilor existente în sistem (ordonate descrescător după numărul de cărți conținute).
+13) Adăugarea unei secțiuni noi în sistem.
+14) Ștergerea unei secțiuni existente în sistem.
+15) Modificarea unei secțiuni existente în sistem.
+16) Afișarea tuturor angajaților din bibliotecă.
+17) Adăugarea unui angajat nou al bibliotecii în sistem.
+18) Actualizarea salariului unui angajat existent în sistem.
+19) Afișarea tuturor cititorilor existenți în sistemul bibliotecii.
+20) Adăugarea unui cititor nou în sistemul bibliotecii.
+21) Ștergerea unui cititor existent din sistem.
+22) Afișarea cărților împrumutate în prezent de către un cititor cu un ID introdus.
+23) Efectuarea unui nou împrumut al unei cărți disponibile din sistem către un cititor.
+24) Efectuarea returnării unei cărți împrumutate anterior de către un cititor în sistem.
+25) Efectuarea unei rezervări pentru o anumită carte de către un cititor din sistem.
+26) Ștergerea unei rezervări existente în sistem.
+
 
 **Autori proiect**
 
